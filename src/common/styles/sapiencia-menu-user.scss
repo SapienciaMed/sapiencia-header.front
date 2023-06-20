@@ -1,0 +1,105 @@
+@import "./mixins.scss";
+
+:root {
+  --color-black: #0b060e;
+  --color-gray: #535353;
+
+  --color-white-1: #fefefe;
+  --color-white-2: #f7fbff;
+  --color-white-3: #d3d0ce;
+
+  --color-theme-1: #6a478d; //#6a478d;
+  --color-theme-2: #d2cfcd;
+  --color-theme-3: #00ebf9; //#00ebf9;
+}
+
+.content-menu-user {
+  position: absolute;
+  width: 310px; /* Ajusta el ancho según tus necesidades */
+  height: 100vh; /* O ajusta la altura según tus necesidades */
+  border: 1px solid #f7fbff;
+  background-color: #fefefe; /* Color de fondo */
+  border-color: #c0bdbd;
+  border-radius: 2px;
+  right: 0;
+
+  .content-info-user {
+    @include generate-flex-container(column, null, center, null, center, 0.5em);
+    padding: 1.5em 2em 2em 2.5em;
+    background-color: #a71989;
+    width: auto;
+    height: 180px;
+
+    p {
+      font-size: 1.3em;
+      color: #fefefe;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .content-cerrar {
+    width: 20%;
+    right: 0;
+    position: absolute;
+  }
+  .button-header {
+    margin-top: 20px;
+    border: none;
+    background-color:transparent;
+    width: 50%;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .content-options-user {
+    @include generate-flex-container(
+      column,
+      null,
+      space-evenly,
+      null,
+      center,
+      2.5em
+    );
+    padding: 1.5em 2em 2em 2.5em;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    width: auto;
+    height: 180px;
+
+    a {
+      font-size: 1.3em;
+    }
+
+    // .content-option{
+    //   //border-bottom: 1px solid #0275e7d7;
+    // }
+  }
+  .content-logos {
+    .content-foot {
+      position: absolute;
+      bottom: 0;
+      border-top: 1px ridge var(--color-white-3);
+      @include generate-flex-container(
+        column,
+        null,
+        center,
+        null,
+        center,
+        null
+      );
+
+      img {
+        height: auto;
+        max-width: 50%;
+        max-height: 50%;
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+}

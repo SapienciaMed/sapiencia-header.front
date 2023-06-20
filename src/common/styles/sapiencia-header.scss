@@ -1,0 +1,175 @@
+@import "./mixins.scss";
+
+:root {
+  --color-black: #0b060e;
+  --color-gray: #535353;
+
+  --color-white-1: #fefefe;
+  --color-white-2: #f7fbff;
+  --color-white-3: #d3d0ce;
+
+  --color-theme-1: #6a478d; //#6a478d;
+  --color-theme-2: #d2cfcd;
+  --color-theme-3: #00ebf9; //#00ebf9;
+}
+.container-grid_header{
+  visibility: hidden; /* Oculta el div */
+  height: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.container-grid_headerM {
+  @include generate-flex-container(
+    row,
+    null,
+    space-around,
+    null,
+    center,
+    null
+  );
+  background-color: #603CE6;
+  width: 100%;
+  height: 100%;
+
+      img {
+        max-width: 40vw;
+        max-height: 40vh;
+      }
+      p{
+        display: none;
+      }
+    
+      .button-header {
+        background-color: transparent;
+        border: none;
+        img {
+          max-width: 6.5vw;
+          max-height: 6.5vh;
+        }
+      }
+}
+
+@media (min-width: 1024px) {
+  .container-grid_headerM {
+    visibility: hidden; /* Oculta el div */
+    height: 0;
+    overflow: hidden;
+    display: none;
+  }
+
+  .container-grid_header {
+    visibility: visible;
+    overflow: visible;
+    height: 100%;
+    $width-columns: 6fr, 3fr;
+    @include generate-grid(2, $width-columns);
+    background-color: var(--color-white-1);
+    border-bottom: 1px ridge var(--color-white-3);
+    box-shadow: 0px 3px 5px var(--color-white-2);
+    .content-logo_sapiencia {
+      img {
+        width: 150px;
+        height: auto;
+        max-width: 80%;
+        max-height: 100%;
+        margin-left: 25px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .content-options_user {
+      @include generate-flex-container(
+        row,
+        null,
+        space-evenly,
+        null,
+        center,
+        null
+      );
+      .button-header {
+        background-color: #fcfbfbef;
+        border: none;
+
+        img {
+          width: 25px;
+          height: auto;
+          max-width: 100%;
+        }
+      }
+      .content-notifications {
+        @include generate-flex-container(row, null, null, null, center, null);
+      }
+    }
+  }
+}
+
+/*
+.container-grid-header {
+    // Estilos para el contenedor sapiencia-container
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
+
+    background-color: #fcfbfbef;
+    border-bottom: 1px ridge rgba(235, 227, 227, 1);
+    box-shadow: 0px 3px 5px rgba(250, 249, 249, 4);
+    width: 100%;
+}
+*/
+/*
+.sapiencia-logo {
+    // Estilos específicos para la clase 'sapiencia-logo'
+    width: 140px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.sapiencia-iconUser {
+    width: 25px;
+    height: 25px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sapiencia-iconCampana {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+}
+
+.sapiencia-div-imagen {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.sapiencia-div-iconCampana {
+    grid-column: 2 ;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sapiencia-div-text{
+    grid-column: 2 ;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sapiencia-div-iconUser{
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sapiencia-button-header{
+    background-color:  #fcfbfbef;
+    border: none;
+}
+*/
