@@ -1,4 +1,5 @@
 import { EResponseCodes } from "../constants/api.enum";
+import { IAuthorization } from "../interfaces/auth.interfaces";
 import { ApiResponse } from "../utils/api-response";
 import useCrudService from "./crud-service.hook";
 
@@ -8,12 +9,12 @@ export function useAuthService() {
 
   const { get } = useCrudService(null, baseURL);
 
-  async function getAuthorization(token: string): Promise<ApiResponse<string>> {
+  async function getAuthorization(token: string): Promise<ApiResponse<IAuthorization>> {
     try {
       const endpoint: string = `/authorization/get-by-token/${token}`;
       return await get(`${authUrl}${endpoint}`);
     } catch (error) {
-      return new ApiResponse("", EResponseCodes.FAIL, "Error no controlado");
+      return new ApiResponse( {} as IAuthorization , EResponseCodes.FAIL, "Error no controlado");
     }
   }
 

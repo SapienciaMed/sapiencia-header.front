@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useAppCominicator from "../hooks/app-communicator.hook";
 import UserMenu from "../components/Menu-user";
 import "../styles/sapiencia-menu-user.scss";
@@ -13,12 +13,15 @@ import "../components/header.scss";
 import useAuthService from "../hooks/auth-service.hook";
 import { EResponseCodes } from "../constants/api.enum";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../contexts/header.context";
 
 export default function Header() {
   // Servicios
   const navigate = useNavigate();
   const { publish } = useAppCominicator();
   const { getAuthorization } = useAuthService();
+  const { authorization , setAuthorization } = useContext(AppContext);
+
 
   const handleSidebar = () => {
     publish("sidebar", true);
@@ -30,10 +33,10 @@ export default function Header() {
     setShowDiv(!showDiv);
   };
 
+  
   // Effect que verifca el token y solicita la autorizacion
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     if (!token) {
       navigate("/login");
     } else {
@@ -42,11 +45,15 @@ export default function Header() {
           if (res.operation.code != EResponseCodes.OK) {
             localStorage.removeItem("token");
             navigate("/login");
+          }else{
+            console.log(res.data);
+            setAuthorization(res.data); 
           }
         })
         .catch(() => {});
     }
   }, []);
+
 
   return (
     <>
@@ -56,7 +63,7 @@ export default function Header() {
         </div>
         <div className="content-options_user">
           <p>
-            Hola, <strong>Usuario Pruebas </strong>
+            Hola, <strong>{authorization?.user?.names} {authorization?.user?.lastNames}</strong>
           </p>
           <div className="content-notifications">
             <button className="button-header">
