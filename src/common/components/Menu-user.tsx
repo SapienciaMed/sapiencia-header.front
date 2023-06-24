@@ -33,7 +33,7 @@ export default function Menu({ handleUserMenu }) {
   };
 
  const handleChangePassword = () => {
-    navigate("/recovery-password");
+    navigate("/change-password");
   }
 
   useEffect(() => {
