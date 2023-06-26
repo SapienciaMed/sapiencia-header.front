@@ -9,4 +9,6 @@ export interface IMessage {
   show?: boolean;
   onOk?: () => void;
   onCancel?: () => void;
+  onClickOutClose?: boolean;
+  onClose?: () => void;
 }

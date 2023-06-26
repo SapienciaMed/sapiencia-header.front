@@ -28,6 +28,12 @@ export default function Menu({ handleUserMenu }) {
         localStorage.removeItem("token");
         navigate("/login");
         setMessage((prev) => {return{...prev,show:false}});
+      },
+      onCancel: () => {
+        setMessage({});
+      },
+      onClose: () => {
+        setMessage({});
       }
     })
   };
