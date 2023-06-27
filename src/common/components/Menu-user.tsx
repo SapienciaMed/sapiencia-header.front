@@ -34,7 +34,8 @@ export default function Menu({ handleUserMenu }) {
       },
       onClose: () => {
         setMessage({});
-      }
+      },
+      background: true,
     })
   };
 
