@@ -38,7 +38,6 @@ export default function Menu({ handleUserMenu }) {
 
   useEffect(() => {
     if(message) {
-      console.log(message);
       publish("modalCloseSession", message)
     };
   }, [message])

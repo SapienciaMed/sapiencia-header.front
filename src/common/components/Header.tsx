@@ -46,7 +46,6 @@ export default function Header() {
             localStorage.removeItem("token");
             navigate("/login");
           }else{
-            console.log(res.data);
             setAuthorization(res.data); 
           }
         })
