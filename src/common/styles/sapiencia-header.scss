@@ -43,9 +43,11 @@
       .button-header {
         background-color: transparent;
         border: none;
+        cursor: pointer;
         img {
           max-width: 6.5vw;
           max-height: 6.5vh;
+          cursor: pointer;
         }
       }
 }
@@ -95,6 +97,7 @@
           width: 25px;
           height: auto;
           max-width: 100%;
+          cursor: pointer;
         }
       }
       .content-notifications {
