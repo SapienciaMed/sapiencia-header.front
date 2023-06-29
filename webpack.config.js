@@ -1,5 +1,7 @@
+/* eslint-disable prettier/prettier */
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -14,14 +16,7 @@ module.exports = (webpackConfigEnv, argv) => {
       rules: [
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            // Creates `style` nodes from JS strings
-            "style-loader",
-            // Translates CSS into CommonJS
-            "css-loader",
-            // Compiles Sass to CSS
-            "sass-loader",
-          ],
+          use: ["style-loader", "css-loader", "sass-loader"],
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -29,8 +24,13 @@ module.exports = (webpackConfigEnv, argv) => {
             loader: "url-loader",
           },
         },
+        {
+          test: /\.png$/,
+          exclude: /public/,
+          use: "file-loader",
+        },
       ],
     },
+    plugins: [new Dotenv()],
   });
 };
-
