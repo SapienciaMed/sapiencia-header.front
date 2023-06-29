@@ -1,18 +1,15 @@
-import { useEffect, useState, useContext } from "react";
-import useAppCominicator from "../../../../sapiencia-core.front/src/common/hooks/app-communicator.hook";
+import { useEffect, useContext } from "react";
 import "../styles/sapiencia-header.scss";
 import "../styles/sapiencia-menu-user.scss";
 import logo from "../public/images/logo-sapiencia-h.png";
-import close from "../public/images/close.png";
 import menu from "../public/images/x-blanca.png";
 import { AppContext } from "../contexts/header.context";
-
-
 import "../components/header.scss";
 import { useNavigate } from "react-router-dom";
+import useAppCominicator from "../hooks/app-communicator.hook";
 
 export default function Menu({ handleUserMenu }) {
-  const { authorization,message,setMessage } = useContext(AppContext);
+  const { authorization, message, setMessage } = useContext(AppContext);
   const { publish, subscribe, unsubscribe } = useAppCominicator();
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -27,7 +24,9 @@ export default function Menu({ handleUserMenu }) {
       onOk: () => {
         localStorage.removeItem("token");
         navigate("/login");
-        setMessage((prev) => {return{...prev,show:false}});
+        setMessage((prev) => {
+          return { ...prev, show: false };
+        });
       },
       onCancel: () => {
         setMessage({});
@@ -36,19 +35,19 @@ export default function Menu({ handleUserMenu }) {
         setMessage({});
       },
       background: true,
-    })
+    });
   };
 
- const handleChangePassword = () => {
+  const handleChangePassword = () => {
     navigate("/change-password");
-  }
+  };
 
   useEffect(() => {
-    if(message) {
-      publish("modalCloseSession", message)
-    };
-  }, [message])
-  
+    if (message) {
+      publish("modalCloseSession", message);
+    }
+  }, [message]);
+
   return (
     <>
       <div className="content-menu-user">
@@ -80,9 +79,7 @@ export default function Menu({ handleUserMenu }) {
             <p> Editar usuario </p>
           </div>
           <div className="content-option">
-            <p onClick={handleCloseSession}>
-              Cerrar Sesión
-            </p>
+            <p onClick={handleCloseSession}>Cerrar Sesión</p>
           </div>
         </div>
         <div className="content-logos">
