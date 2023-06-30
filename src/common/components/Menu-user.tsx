@@ -42,11 +42,11 @@ export default function Menu({ handleUserMenu }) {
     navigate("/change-password");
   };
 
-  useEffect(() => {
-    if (message) {
-      publish("modalCloseSession", message);
-    }
-  }, [message]);
+  // useEffect(() => {
+  //   if (message) {
+  //     publish("modalCloseSession", message);
+  //   }
+  // }, [message]);
 
   return (
     <>

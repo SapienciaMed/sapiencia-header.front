@@ -35,23 +35,23 @@ export default function Header() {
 
   
   // Effect que verifca el token y solicita la autorizacion
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login");
-    } else {
-      getAuthorization(token)
-        .then((res) => {
-          if (res.operation.code != EResponseCodes.OK) {
-            localStorage.removeItem("token");
-            navigate("/login");
-          }else{
-            setAuthorization(res.data); 
-          }
-        })
-        .catch(() => {});
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (!token) {
+  //     navigate("/login");
+  //   } else {
+  //     getAuthorization(token)
+  //       .then((res) => {
+  //         if (res.operation.code != EResponseCodes.OK) {
+  //           localStorage.removeItem("token");
+  //           navigate("/login");
+  //         }else{
+  //           setAuthorization(res.data); 
+  //         }
+  //       })
+  //       .catch(() => {});
+  //   }
+  // }, []);
 
 
   return (
