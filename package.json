@@ -25,6 +25,8 @@
     "@babel/runtime": "^7.15.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "@types/testing-library__jest-dom": "^5.14.1",
     "babel-jest": "^27.0.6",
     "concurrently": "^6.2.1",
@@ -49,8 +51,6 @@
   },
   "dependencies": {
     "@types/jest": "^27.0.1",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9",
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
     "axios": "^1.4.0",
