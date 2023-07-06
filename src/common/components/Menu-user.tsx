@@ -5,6 +5,7 @@ import "../styles/sapiencia-menu-user.scss";
 import logo from "../public/images/logo-sapiencia-h.png";
 import close from "../public/images/close.png";
 import menu from "../public/images/x-blanca.png";
+import {MdOutlineClose} from "react-icons/md"
 import { AppContext } from "../contexts/header.context";
 
 
@@ -56,7 +57,7 @@ export default function Menu({ handleUserMenu }) {
           <div className="content-cerrar">
             {
               <button className="button-header" onClick={handleUserMenu}>
-                {<img src={menu} alt="Cerrar" />}
+                   {<MdOutlineClose size={32} color="white" />}
               </button>
             }
           </div>

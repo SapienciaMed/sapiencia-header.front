@@ -8,9 +8,9 @@
   --color-white-2: #f7fbff;
   --color-white-3: #d3d0ce;
 
-  --color-theme-1: #6a478d; //#6a478d;
+  --color-theme-1: #6a478d; 
   --color-theme-2: #d2cfcd;
-  --color-theme-3: #00ebf9; //#00ebf9;
+  --color-theme-3: #00ebf9; 
 }
 
 .content-menu-user {
@@ -34,7 +34,7 @@
       0.5em
     );
     padding: 1.5em 2em 2em 4.5em;
-    background-color: #a71989;
+    background-color: #533893;
     width: auto;
     height: 180px;
 
@@ -55,11 +55,7 @@
     border: none;
     background-color: transparent;
     width: 50%;
-    img {
-      max-width: 70%;
-      height: auto;
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 
   .content-options-user {
@@ -135,7 +131,7 @@
         0.5em
       );
       padding: 1.5em 2em 2em 4.5em;
-      background-color: #a71989;
+      background-color: #533893;
       width: auto;
       height: 180px;
 
