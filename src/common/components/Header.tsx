@@ -102,9 +102,7 @@ export default function Header() {
           <button className="button-header" onClick={handleSidebar}>
               {<GiHamburgerMenu size={32} color="#67C6DD" />} 
           </button>
-     
-          <img src={logoAlcaldia} alt="Alcaldia" />
-
+            <img src={logoAlcaldia} alt="Alcaldia" onClick={() => {navigate('/')}} />
           <button className="button-header" onClick={handleUserMenu}>
               {<BiSolidUser size={32} color="#67C6DD" />}
           </button>
