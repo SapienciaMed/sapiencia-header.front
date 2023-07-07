@@ -41,7 +41,7 @@
       }
     
       .button-header {
-        background-color: transparent;
+        background-color: inherit;
         border: none;
       }
 }
@@ -94,73 +94,3 @@
     }
   }
 }
-
-/*
-.container-grid-header {
-    // Estilos para el contenedor sapiencia-container
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(auto, auto);
-
-    background-color: #fcfbfbef;
-    border-bottom: 1px ridge rgba(235, 227, 227, 1);
-    box-shadow: 0px 3px 5px rgba(250, 249, 249, 4);
-    width: 100%;
-}
-*/
-/*
-.sapiencia-logo {
-    // Estilos específicos para la clase 'sapiencia-logo'
-    width: 140px;
-    height: auto;
-    margin-left: 20px;
-}
-
-.sapiencia-iconUser {
-    width: 25px;
-    height: 25px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sapiencia-iconCampana {
-    width: 25px;
-    height: 25px;
-    margin-left: 20px;
-}
-
-.sapiencia-div-imagen {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.sapiencia-div-iconCampana {
-    grid-column: 2 ;
-    grid-row: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.sapiencia-div-text{
-    grid-column: 2 ;
-    grid-row: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.sapiencia-div-iconUser{
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.sapiencia-button-header{
-    background-color:  #fcfbfbef;
-    border: none;
-}
-*/
