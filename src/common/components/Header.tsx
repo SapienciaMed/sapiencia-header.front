@@ -3,12 +3,11 @@ import useAppCominicator from "../hooks/app-communicator.hook";
 import UserMenu from "../components/Menu-user";
 import "../styles/sapiencia-menu-user.scss";
 import "../styles/sapiencia-header.scss";
-import sapienciaLogo from "../public/images/sapiencia-1.png";
-import iconUser from "../public/images/ico-user.png";
-import iconCampana from "../public/images/icon-notif.png";
-import iconUserWh from "../public/images/ico-user-wh.png";
-import navMovil from "../public/images/nav-mob.png";
-import logoAlcaldia from "../public/images/logo-sapiencia-horizontal.png";
+import iconUser from "../public/images/ico-user-533893.png";
+import iconCampana from "../public/images/icon-notif-533893.png";
+import iconUserBL from "../public/images/ico-user-67C6DD.png";
+import navMovil from "../public/images/nav-mob-67C6DD.png";
+import logoSapienciaAlcaldiaBlanco from "../public/images/logo-sapiencia-alcaldia-blanco.png";
 import "../components/header.scss";
 import useAuthService from "../hooks/auth-service.hook";
 import { EResponseCodes } from "../constants/api.enum";
@@ -78,15 +77,17 @@ export default function Header() {
 
       <header className="container-grid_headerM">
        
-          <button className="button-header" onClick={handleSidebar}>
-            <img src={navMovil} alt="menu" />
-          </button>
+        <button className="button-header" onClick={handleSidebar}>
+          <img src={navMovil} alt="menu" />
+        </button>
      
-          <img src={logoAlcaldia} alt="Alcaldia" />
+        
+        <img className="log-alcaldia" src={logoSapienciaAlcaldiaBlanco} alt="Alcaldia" />
+        
 
-          <button className="button-header" onClick={handleUserMenu}>
-            <img src={iconUserWh} alt="usuario" />
-          </button>
+        <button className="button-header" onClick={handleUserMenu}>
+          <img src={iconUserBL} alt="usuario" />
+        </button>
       </header>
     </>
   );

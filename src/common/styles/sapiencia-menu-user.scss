@@ -11,6 +11,7 @@
   --color-theme-1: #6a478d; //#6a478d;
   --color-theme-2: #d2cfcd;
   --color-theme-3: #00ebf9; //#00ebf9;
+  --sapiensa-principal-533893: #533893;
 }
 
 .content-menu-user {
@@ -34,7 +35,7 @@
       0.5em
     );
     padding: 1.5em 2em 2em 4.5em;
-    background-color: #a71989;
+    background-color: var( --sapiensa-principal-533893);
     width: auto;
     height: 180px;
 
@@ -135,7 +136,7 @@
         0.5em
       );
       padding: 1.5em 2em 2em 4.5em;
-      background-color: #a71989;
+      background-color: var( --sapiensa-principal-533893);
       width: auto;
       height: 180px;
 
