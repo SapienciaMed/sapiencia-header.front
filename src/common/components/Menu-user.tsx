@@ -10,9 +10,8 @@ import useAppCominicator from "../hooks/app-communicator.hook";
 
 export default function Menu({ handleUserMenu }) {
   const { authorization, message, setMessage } = useContext(AppContext);
-  const { publish, subscribe, unsubscribe } = useAppCominicator();
+  const { publish } = useAppCominicator();
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
 
   const handleCloseSession = () => {
     setMessage({
