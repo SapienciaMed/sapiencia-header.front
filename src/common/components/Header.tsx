@@ -8,6 +8,7 @@ import iconCampana from "../public/images/icon-notif-533893.png";
 import iconUserBL from "../public/images/ico-user-67C6DD.png";
 import navMovil from "../public/images/nav-mob-67C6DD.png";
 import logoSapienciaAlcaldiaBlanco from "../public/images/logo-sapiencia-alcaldia-blanco.png";
+import iconoAurora from '../public/images/aurora-color.png'
 import "../components/header.scss";
 import useAuthService from "../hooks/auth-service.hook";
 import { EResponseCodes } from "../constants/api.enum";
@@ -57,7 +58,8 @@ export default function Header() {
     <>
     {showDiv && <UserMenu handleUserMenu={handleUserMenu} ></UserMenu>}
       <header className="container-grid_header">
-        <div className="content-logo_sapiencia">
+        <div className="content-logo-aurora">
+          <img src={iconoAurora} alt="aurora"/>
         </div>
         <div className="content-options_user">
           <p>
@@ -80,11 +82,9 @@ export default function Header() {
         <button className="button-header" onClick={handleSidebar}>
           <img src={navMovil} alt="menu" />
         </button>
-     
-        
-        <img className="log-alcaldia" src={logoSapienciaAlcaldiaBlanco} alt="Alcaldia" />
-        
 
+        <img className="log-alcaldia" src={logoSapienciaAlcaldiaBlanco} alt="Alcaldia" />
+      
         <button className="button-header" onClick={handleUserMenu}>
           <img src={iconUserBL} alt="usuario" />
         </button>
